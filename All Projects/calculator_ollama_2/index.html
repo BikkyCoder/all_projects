@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Calculator</title>
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: Arial, sans-serif;
+        }
+
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          background-color: #f0f2f5;
+        }
+
+        .calculator {
+          background-color: white;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          width: 320px;
+        }
+
+        #display {
+          width: 100%;
+          height: 80px;
+          margin-bottom: 20px;
+          text-align: right;
+          padding: 15px;
+          font-size: 30px;
+          border: none;
+          background-color: #f8f9fa;
+          border-radius: 5px;
+        }
+
+        .buttons {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 10px;
+        }
+
+        button {
+          padding: 20px;
+          font-size: 20px;
+          border: none;
+          background-color: #f8f9fa;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+
+        button:hover {
+          background-color: #e9ecef;
+        }
+
+        .operator {
+          background-color: #4dabf7;
+          color: white;
+        }
+
+        .operator:hover {
+          background-color: #339af0;
+        }
+
+        .equals {
+          background-color: #40c057;
+          color: white;
+          grid-column: span 2;
+        }
+
+        .equals:hover {
+          background-color: #37b24d;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+          <button class="clear" onclick="clearDisplay()">C</button>
+          <button class="delete" onclick="deleteLastChar()">⌫</button>
+          <button class="operator" onclick="handleOperator('%')">%</button>
+          <button class="operator" onclick="handleOperator('/')">÷</button>
+          <button onclick="appendNumber('7')">7</button>
+          <button onclick="appendNumber('8')">8</button>
+          <button onclick="appendNumber('9')">9</button>
+          <button class="operator" onclick="handleOperator('*')">×</button>
+          <button onclick="appendNumber('4')">4</button>
+          <button onclick="appendNumber('5')">5</button>
+          <button onclick="appendNumber('6')">6</button>
+          <button class="operator" onclick="handleOperator('-')">-</button>
+          <button onclick="appendNumber('1')">1</button>
+          <button onclick="appendNumber('2')">2</button>
+          <button onclick="appendNumber('3')">3</button>
+          <button class="operator" onclick="handleOperator('+')">+</button>
+          <button onclick="appendNumber('0')">0</button>
+          <button onclick="appendDecimal()">.</button>
+          <button class="equals" onclick="calculate()">=</button>
+        </div>
+      </div>
+
+      <script>
+        let currentOperand = '';
+        let previousOperand = '';
+        let operation = null;
+        let newNumber = true;
+
+        function updateDisplay() {
+          document.getElementById('display').value = currentOperand;
+        }
+
+        function clearDisplay() {
+          currentOperand = '';
+          previousOperand = '';
+          operation = null;
+          newNumber = true;
+          updateDisplay();
+        }
+
+        function deleteLastChar() {
+          currentOperand = currentOperand.toString().slice(0, -1);
+          updateDisplay();
+        }
+
+        function appendNumber(number) {
+          if (newNumber) {
+            currentOperand = number;
+            newNumber = false;
+          } else {
+            currentOperand += number;
+          }
+          updateDisplay();
+        }
+
+        function appendDecimal() {
+          if (!currentOperand.includes('.')) {
+            currentOperand += '.';
+            updateDisplay();
+          }
+        }
+
+        function handleOperator(op) {
+          if (currentOperand === '') return;
+          
+          if (operation !== null && operation !== '=') {
+            calculate();
+          }
+          
+          previousOperand = currentOperand;
+          operation = op;
+          newNumber = true;
+        }
+
+        function calculate() {
+          try {
+            let result;
+            const prev = parseFloat(previousOperand);
+            const current = parseFloat(currentOperand);
+
+            if (operation === '+') {
+              result = prev + current;
+            } else if (operation === '-') {
+              result = prev - current;
+            } else if (operation === '*') {
+              result = prev * current;
+            } else if (operation === '/') {
+              result = prev / current;
+            } else if (operation === '%') {
+              result = (prev * current) / 100;
+            }
+
+            currentOperand = result.toString();
+            operation = '=';
+            newNumber = true;
+            updateDisplay();
+          } catch (error) {
+            currentOperand = 'Error';
+            previousOperand = '';
+            operation = null;
+            newNumber = true;
+            updateDisplay();
+          }
+        }
+      </script>
+

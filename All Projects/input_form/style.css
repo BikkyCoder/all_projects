@@ -1,0 +1,80 @@
+body {
+    background-color: rgb(37, 37, 37);
+    background: url('img/photo-1512453979798-5ea266f8880c.jpg') no-repeat center center/cover;
+}
+
+input {
+    border: none;
+    border: 1px solid black;
+    padding: 8px 15px;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.443);
+    font-weight: bolder;
+    width: 400px;
+    color: white;
+    margin: 0px 1px 1px 1px;
+
+}
+
+#btn {
+    padding: 9px 20px;
+    border: none;
+    border: 2px solid black;
+    font-weight: bolder;
+    color: rgb(146, 146, 146);
+    background-color: rgb(0, 255, 128);
+    color: black;
+    font-weight: bolder ;
+    margin-top: 20px;
+    
+}
+.input_box{
+    /* border: 2px solid red; */
+    align-items: end;
+    display: flex;
+    flex-direction: column;
+}
+
+.form_body {
+    /* border: 2px solid red; */
+    background-color: rgba(0, 0, 0, 0.806);
+    height: 500px;
+    width: 800px;
+    margin: 150px auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+#a_link {
+    padding: 9px 20px;
+    border: none;
+    border: 2px solid black;
+    color: black;
+    font-weight: bolder;
+    background-color: rgba(0, 191, 255, 0.857);
+    margin-top:300px;
+    display: none;
+}
+
+.img {
+    /* border: 2px solid red; */
+    border-top-left-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+    /* border-top: 2px solid red;
+    border-bottom: 2px solid red; */
+    position: absolute;
+    top: 200px;
+    display: none;
+
+}
+
+.img img {
+    width: 300px;
+    border-top-left-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+
+}

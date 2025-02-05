@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input Example</title>
+</head>
+<body>
+    <h1>User Input Example</h1>
+    <input type="text" id="userInput" placeholder="Enter something...">
+    <button onclick="getInput()">Submit</button>
+    <p id="output"></p>
+
+    <script>
+        function getInput() {
+            
+            var input = document.getElementById("userInput").value;
+            
+            document.getElementById("output").innerText = "You entered: " + input;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div class="rotating-circle-container">
+        <div class="rotating-circle">
+           
+           
+        </div>
+    </div>
+    <style>
+        .rotating-circle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+        }
+        .rotating-circle {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            animation: rotate 10s linear infinite;
+        }
+        .service-item {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform-origin: center;
+            text-align: center;
+            width: 80px;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('rotating_services', 'rotating_services_circle');
+
+    
+</body>
+</html>

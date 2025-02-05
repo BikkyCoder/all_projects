@@ -1,0 +1,21 @@
+body{
+    background-color: grey;
+}
+
+.img_1{
+    /* border: 2px solid red; */
+    width: 900px;
+    margin: 200px auto;
+
+}
+
+.img_1 img{
+    height: 600px;
+    animation: imgRun linear 1s infinite;
+}
+@keyframes imgRun {
+    from {
+        transform: rotate(360deg);
+    }
+   
+  }

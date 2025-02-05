@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    line-height: 1.6;
+    color: #333;
+  }
+
+  /* Header Styles */
+  header {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    margin: 0 15px;
+  }
+
+  /* Hero Section */
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: url("img/0c3c20a8d8514501524a0859461f391572ea6e61.webp") no-repeat center center/cover;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: 40px;
+  }
+
+  /* Features Section */
+
+  #features {
+    padding: 50px 20px;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+  }
+
+  .feature-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    
+  }
+
+  /* About Section */
+  #about {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+  }
+
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+  }
+
+  /* Footer Styles */
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .social-links a {
+    color: white;
+    text-decoration: none;
+  }
+
+
+  #spider_man{
+    width: 850px;
+    animation: shack 3s ease-in-out infinite;
+  }
+  @keyframes shack {
+    0%{
+        transform:rotateX(-40deg);
+    }
+    50%{
+        transform: rotateX(40deg);
+    }
+    100%{
+        transform: rotateX(-40deg);
+    }
+  }
