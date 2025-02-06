@@ -1,0 +1,101 @@
+*{
+    padding: 0px ;
+    margin: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#stn1{
+    border: 2px solid red;
+    height: 100px;
+}
+
+.navbar_list_one{
+    background-color: rgb(47, 47, 47);
+    height: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+
+}
+.nav_heading{
+    /* border: 2px solid red; */
+    margin:0px 50px 0px 25px;;
+    display: flex;
+    flex-direction: column;
+    line-height: 20px;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5px;
+    
+}
+.nav_heading h1{
+    font-size: 25px;
+}
+.nav_heading p{
+    font-size: 15px;
+}
+
+
+
+.days{
+     /* border: 2px solid red; */
+     margin:0px 50px 0px 25px;;
+     display: flex;
+     flex-direction: column;
+     line-height: 20px;
+     text-align: center;
+     justify-content: center;
+    margin-top: 5px;
+}
+.days h1{
+    font-size: 25px;
+   
+}
+.days p{
+    font-size: 12px;
+}
+
+
+.images{
+    /* border: 2px solid red; */
+    margin:0px 50px 0px 25px;;
+    display: flex;
+    flex-direction: column;
+    line-height: 20px;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5px;
+
+}
+
+.images{
+  
+
+}
+.get_now_btn{
+    border: 2px solid red;
+    margin:0px 50px 0px 25px;
+}
+
+
+
+
+
+
+
+
+/* 
+.navbar_list_two{
+    border: 2px solid rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav_button_list_one{
+    border: 2px solid rgb(47, 237, 0);
+    
+}
+.nav_button_list_two{
+    border: 2px solid rgb(252, 0, 189);
+    
+} */
