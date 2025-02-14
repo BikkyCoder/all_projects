@@ -1,0 +1,58 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    overflow: auto;
+    background: url('/img/pngtree-christmas-mosk-up-wish-list-on-purple-background-notebook-todo-list-image_15497116.jpg') no-repeat center center/cover;
+    height: 90vh;
+    width: 90vw;
+}
+h1{
+    /* border: 2px solid red; */
+    background-color:rgba(0, 0, 0, 0.192);
+    padding: 4px 23px;
+    border-radius: 5px;
+}
+
+.container{
+    /* border: 2px solid red; */
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px auto;  
+    position:relative;
+    top: 120px;
+    left: 120px;
+
+}
+
+input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+button {
+    padding: 12px 16px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#taskList{
+    border: 1px solid rgb(0, 0, 0);
+    border: none;
+    position: relative;
+    left: -14px;
+}
