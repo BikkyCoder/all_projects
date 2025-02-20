@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content=" blog page meta information ">
+  <meta name="keywords" content="blog page mata keywords ">
+  <link rel="canonical" href="https://edek.film/">
+  <meta name="Devender Garg" content="Devender Garg">
+  <meta name="publisher" content="Ranknrise">
+  <meta http-equiv="Content-Language" content="en-US">
+  <title>Blog - YourSiteName</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html"><img src="images/logo.png" alt="Site Logo"></a> 
+      </div>
+      <nav>
+        <div id="menu-toggle" onclick="togglemenu()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <ul  id="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="blog-section">
+      <h1>Blog</h1>
+      <article class="post">
+        <h2>Introducing Our YouTube Thumbnail Downloader</h2>
+        <p class="post-date">January 1, 2025</p>
+        <img src="images/blog1.jpg" alt="YouTube Thumbnail Downloader">
+        <p>We are excited to announce the launch of our new YouTube Thumbnail Downloader tool! This tool allows you to easily extract and download high-quality thumbnails from any YouTube video.</p>
+        <a href="post1.html" class="read-more">Read More</a>
+      </article>
+      <!-- Additional blog posts can be added similarly -->
+    </section>
+  </main>
+
+  <!-- Footer -->
+   <div id="footer"></div>
+ 
+</body>
+<script>
+
+
+let menuList = document.getElementById('menu')
+      menuList.style.left = '-100%'
+
+      function togglemenu(){
+        if( menuList.style.left == '0%'){
+           menuList.style.left = '-100%'
+        }else{
+           menuList.style.left = '0%'
+        }
+      }
+
+      fetch('footer.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('footer').innerHTML = data)
+
+  
+</script>
+</html>

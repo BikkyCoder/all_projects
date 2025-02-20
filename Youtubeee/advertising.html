@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advertising Policy - YourSiteName</title>
+  <meta name="description" content=" Advertising Policy page meta information ">
+  <meta name="keywords" content="Advertising Policy page mata keywords ">
+  <link rel="canonical" href="https://edek.film/">
+  <meta name="Devender Garg" content="Devender Garg">
+  <meta name="publisher" content="Ranknrise">
+  <meta http-equiv="Content-Language" content="en-US">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+       <a href="index.html"><img src="images/logo.png" alt="Site Logo"></a> 
+      </div>
+      <nav>
+        <div id="menu-toggle" onclick="togglemenu()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <ul  id="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="advertising-section">
+      <h1>Advertising Policy</h1>
+      <p>This page explains our advertising policies. We strive to maintain transparency in how advertisements and affiliate links are used on our website.</p>
+      <!-- Add further details about your advertising policies here -->
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+</body>
+<script>
+    let menuList = document.getElementById('menu')
+      menuList.style.left = '-100%'
+
+      function togglemenu(){
+        if( menuList.style.left == '0%'){
+           menuList.style.left = '-100%'
+        }else{
+           menuList.style.left = '0%'
+        }
+      }
+
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer').innerHTML = data)
+      
+      </script>
+</html>
