@@ -3,62 +3,122 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - YourSiteName</title>
+   <link rel="stylesheet" href="css/style.css?v=0.0.2">
+  <!--<script src="scriptVU.js"></script>-->
   <meta name="description" content=" blog page meta information ">
   <meta name="keywords" content="blog page mata keywords ">
   <link rel="canonical" href="https://edek.film/">
   <meta name="Devender Garg" content="Devender Garg">
   <meta name="publisher" content="Ranknrise">
   <meta http-equiv="Content-Language" content="en-US">
-  <title>Blog - YourSiteName</title>
-  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!-- Header -->
-  <header>
-    <div class="container">
-      <div class="logo">
-        <a href="index.html"><img src="images/logo.png" alt="Site Logo"></a> 
-      </div>
-      <nav>
-        <div id="menu-toggle" onclick="togglemenu()">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <ul  id="menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="blog.html" class="active">Blog</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div id="header"></div>
 
   <!-- Main Content -->
   <main>
-    <section class="blog-section">
-      <h1>Blog</h1>
-      <article class="post">
-        <h2>Introducing Our YouTube Thumbnail Downloader</h2>
-        <p class="post-date">January 1, 2025</p>
-        <img src="images/blog1.jpg" alt="YouTube Thumbnail Downloader">
-        <p>We are excited to announce the launch of our new YouTube Thumbnail Downloader tool! This tool allows you to easily extract and download high-quality thumbnails from any YouTube video.</p>
-        <a href="post1.html" class="read-more">Read More</a>
-      </article>
-      <!-- Additional blog posts can be added similarly -->
-    </section>
-  </main>
+    <h2>Blog</h2>
+    <div class="crad_box">
+      <div class="card-container">
+          <div id="card-container"></div> 
+      </div>
+  </div>
 
+  <br>
+<hr>
+  
+  <!-- Three Boxs -->
+<div class="blog_main_container">
+
+  <div class="blog_card_container">
+    <div class="blog_card">
+        <img src="images/blog_image.png" alt="Mountain">
+        <div class="blog_card-content">
+            <h3>Introducing Our YouTube Thumbnail Downloader</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            <a href="#" class="blog_btn">Read More</a>
+        </div>
+    </div>
+
+    <div class="blog_card">
+        <img src="images/blog_image3.jpg" alt="Mountain">
+        <div class="blog_card-content">
+            <h3>Introducing Our YouTube Thumbnail Downloader</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            <a href="#" class="blog_btn">Read More</a>
+        </div>
+    </div>
+
+    <div class="blog_card">
+        <img src="images/blog_image.png" alt="Mountain">
+        <div class="blog_card-content">
+            <h3>Introducing Our YouTube Thumbnail Downloader</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            <a href="#" class="blog_btn">Read More</a>
+        </div>
+    </div>
+</div>
+</div>
+  
+ 
+
+  </main>
   <!-- Footer -->
    <div id="footer"></div>
- 
-</body>
+
+   <script src="hrScript.js"></script>
+  
+   
 <script>
 
 
+function createCard(imageUrl, title, description, linkUrl,CardUrl,linkText) {
+    let card = document.createElement("a"); // <a> tag to wrap the entire card
+    card.href = linkUrl;
+    // card.target = "_blank"; // Opens in a new tab
+    card.classList.add("business-card");
+  
+
+    card.innerHTML = `
+        <div class="card_image_1">
+            <img src="${imageUrl}" alt="Image">
+        </div>
+        <div class="card_text">
+            <h3>${title}</h3>
+            <p>${description}</p>
+            <a class="blog_btn" href="${CardUrl}" target="_blank">${linkText}</a>
+        </div>
+        
+    `;
+
+    document.getElementById("card-container").appendChild(card);
+}
+
+// Creating 2 cards with different links
+createCard(
+    "images/blog_image2.png",
+    "SIntroducing Our YouTube Thumbnail Downloader",
+    "Watch the Spider-Man movies in the best order!",
+    "blogPage1.html",
+    "blogPage1.html",
+    "click me"
+);
+
+createCard(
+    "images/blog_image2.png",
+    "Introducing Our YouTube Thumbnail Downloader",
+    "Watch the Batman movies in the best order!",
+    "blogPage2.html",
+    "blogPage2.html",
+    "click me"
+
+);
+
+  
 let menuList = document.getElementById('menu')
       menuList.style.left = '-100%'
-
       function togglemenu(){
         if( menuList.style.left == '0%'){
            menuList.style.left = '-100%'
@@ -66,11 +126,7 @@ let menuList = document.getElementById('menu')
            menuList.style.left = '0%'
         }
       }
-
-      fetch('footer.html')
-      .then(response => response.text())
-      .then(data => document.getElementById('footer').innerHTML = data)
-
-  
 </script>
+</body>
+
 </html>

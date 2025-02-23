@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Download youtube thumbnail Images and vimeo videos of all quality. This app lets you to download HD thumbnail images for free. Just enter the URL of the video for which thumbnail needs to be saved.">
-  <meta name="keywords"
-    content="YouTube thumbnail download, video thumbnails, HD thumbnail grabber, free thumbnail viewer">
+  <meta name="description" content="Download youtube thumbnail Images and vimeo videos of all quality. This app lets you to download HD thumbnail images for free. Just enter the URL of the video for which thumbnail needs to be saved.">
+  <meta name="keywords" content="YouTube thumbnail download, video thumbnails, HD thumbnail grabber, free thumbnail viewer">
   <link rel="canonical" href="https://edek.film/">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Devender Garg">
@@ -17,25 +14,14 @@
   <link rel="stylesheet" href="css/style.css?v=0.0.2">
   <!--<script src="scriptVU.js"></script>-->
 </head>
-
 <body>
   <!-- Header -->
-
   <div id="header"></div>
-
-
-
   <!-- Main Content -->
   <main>
-    <section class="downloader">
-      <h1>YouTube Thumbnail Downloader - Save YT Video Thumbnails</h1>
-      <p>Enter a YouTube URL to get thumbnail images.</p>
-      <div class="downloader-form">
-        <input type="text" id="videoUrl" value="" placeholder="Enter YouTube URL">
-        <button onclick="generateThumbnails()">Get Thumbnails</button>
-      </div>
-      <div id="thumbnails"></div>
-    </section>
+
+    <h2>Blog 1</h2>
+    
     <section class="guide">
       <p>Welcome to our YouTube Video Thumbnail Downloader! This tool is designed to help you easily download
         high-quality thumbnails from any YouTube video. Whether you&rsquo;re a content creator, marketer, or just
@@ -111,21 +97,15 @@
         use them effectively in your projects while respecting copyright laws. Happy creating!</p>
       <p>Below are some example images to guide you:</p>
       <div class="guide-images">
-          <img src="images/guide-step1.png" alt="Step 1" onclick="openPopup(this)" title="Copy the YouTube URL">
-          <img src="images/guide-step2.png" alt="Step 2" onclick="openPopup(this)"
-            title="Paste the URL and click Get Thumbnails">
-          <img src="images/guide-step3.png" alt="Step 3" onclick="openPopup(this)" title="Download the thumbnail">
-
-          <div id="imagePopup" class="popup">
-            <span class="close" onclick="closePopup()">&times;</span>
-            <img class="popup-content" id="popupImage">
-          </div>
-
-        </div>
+        <img src="images/guide-step1.png" alt="Step 1" title="Copy the YouTube URL">
+        <img src="images/guide-step2.png" alt="Step 2" title="Paste the URL and click Get Thumbnails">
+        <img src="images/guide-step3.png" alt="Step 3" title="Download the thumbnail">
+      </div>
     </section>
   </main>
   <!-- Footer -->
-  <div id="footer"></div>
+  <div id="footer">
+  </div>
 
   <script src="hrScript.js"></script>
 
@@ -134,13 +114,10 @@
       // Redirect to root URL
       window.history.replaceState({}, '', '/');
     }
-
-    
     let menuList = document.getElementById('menu')
     menuList.style.left = '-100%'
 
-    function togglemenu(e) {
-      console.log(e)
+    function togglemenu() {
       if (menuList.style.left == '0%') {
         menuList.style.left = '-100%'
       } else {
@@ -149,108 +126,6 @@
     }
 
 
-    function openPopup(img) {
-      let popup = document.getElementById("imagePopup");
-      let popupImage = document.getElementById("popupImage");
-      popupImage.style.height = '370px'
-      popupImage.style.width = '900px'
-
-      popup.style.display = "flex";
-      popupImage.src = img.src; // Set clicked image as popup image
-    }
-
-    function closePopup() {
-      document.getElementById("imagePopup").style.display = "none";
-    }
-
-
-    // Extract YouTube Video ID
-    // Extract video ID from a YouTube URL or use the input as-is if it's a valid ID
-    function extractVideoID(input) {
-      // Regular expression to extract video ID from a YouTube URL
-      const regExp = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/|live\/|playlist\?list=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
-      const match = input.match(regExp);
-
-      // If input is a full URL, extract the ID, otherwise assume it's a direct ID
-      if (match) {
-        return match[1]; // Extracted video ID from URL
-      } else if (input.length === 11 && /^[a-zA-Z0-9_-]+$/.test(input)) {
-        return input; // Input is already a valid video ID
-      } else {
-        return null; // Invalid input
-      }
-    }
-
-    // Generate Thumbnails and Display Them
-    function generateThumbnails() {
-      const input = document.getElementById('videoUrl').value.trim();
-      const videoID = extractVideoID(input);
-      const thumbnailsDiv = document.getElementById('thumbnails');
-      thumbnailsDiv.innerHTML = '';
-
-      if (!videoID) {
-        thumbnailsDiv.innerHTML = '<p>Invalid YouTube URL or Video ID. Please try again.</p>';
-        return;
-      }
-
-      // Thumbnail URLs based on YouTube image API
-      const thumbUrls = [
-        `https://img.youtube.com/vi/${videoID}/maxresdefault.jpg`,
-        `https://img.youtube.com/vi/${videoID}/sddefault.jpg`,
-        `https://i3.ytimg.com/vi/${videoID}/hqdefault.jpg`,
-        `https://img.youtube.com/vi/${videoID}/mqdefault.jpg`,
-        `https://img.youtube.com/vi/${videoID}/default.jpg`
-      ];
-
-      // Create and display thumbnail images
-      thumbUrls.forEach(url => {
-        const container = document.createElement('div');
-        container.className = 'thumbnail';
-
-        const img = document.createElement('img');
-        img.src = url;
-        img.alt = "YouTube Thumbnail";
-        container.appendChild(img);
-
-        const linkText = document.createElement('p');
-        linkText.className = 'link_p';
-        linkText.textContent = url;
-        container.appendChild(linkText);
-
-        // Download button for each thumbnail
-        const downloadBtn = document.createElement('button');
-        downloadBtn.textContent = "Download Thumbnail";
-        downloadBtn.className = 'download-btn';
-        downloadBtn.onclick = function () {
-          downloadImage(url);
-        };
-        container.appendChild(downloadBtn);
-
-        thumbnailsDiv.appendChild(container);
-      });
-    }
-
-    // Download Image as Blob
-    function downloadImage(url) {
-      fetch(url)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.blob();
-        })
-        .then(blob => {
-          const blobUrl = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = blobUrl;
-          a.download = url.substring(url.lastIndexOf('/') + 1);
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          URL.revokeObjectURL(blobUrl);
-        })
-        .catch(error => console.error('Error downloading image:', error));
-    }
   </script>
 </body>
 

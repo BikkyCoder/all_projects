@@ -3,38 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <title>Sitemap - YourSiteName</title>
+   <link rel="stylesheet" href="css/style.css?v=0.0.2">
+  <!--<script src="scriptVU.js"></script>-->
   <meta name="description" content=" Sitemap page meta information ">
   <meta name="keywords" content="Sitemap page mata keywords ">
   <link rel="canonical" href="https://edek.film/">
   <meta name="Devender Garg" content="Devender Garg">
   <meta name="publisher" content="Ranknrise">
   <meta http-equiv="Content-Language" content="en-US">
-  
-  <title>Sitemap - YourSiteName</title>
-  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!-- Header -->
-  <header>
-    <div class="container">
-      <div class="logo">
-        <a href="index.html"><img src="images/logo.png" alt="Site Logo"></a> 
-      </div>
-      <nav>
-        <div id="menu-toggle" onclick="togglemenu()">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <ul  id="menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="blog.html">Blog</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+
+  <div id="header"></div>
 
   <!-- Main Content -->
   <main>
@@ -52,10 +34,13 @@
     </section>
   </main>
 
+
   <!-- Footer -->
   <div id="footer"></div>
-</body>
-<script>
+  
+  <script src="hrScript.js"></script>
+
+  <script>
        let menuList = document.getElementById('menu')
       menuList.style.left = '-100%'
 
@@ -67,9 +52,8 @@
         }
       }
 
-      fetch('footer.html')
-      .then(response => response.text())
-      .then(data => document.getElementById('footer').innerHTML = data);
 
 </script>
+</body>
+
 </html>
